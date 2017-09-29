@@ -30,9 +30,9 @@ tools:context=".MainActivity"
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:gravity="left"
+                    android:gravity="start"
                     android:text="Sexo: "
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -68,7 +68,6 @@ tools:context=".MainActivity"
                 android:id="@+id/spnEdad"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
                 android:gravity="left">
 
             </Spinner>
@@ -101,7 +100,6 @@ tools:context=".MainActivity"
                 android:id="@+id/spnEstatura"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
                 android:gravity="left">
             </Spinner>
 
@@ -133,7 +131,6 @@ tools:context=".MainActivity"
                 android:id="@+id/spnPeso"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
                 android:gravity="left">
 
             </Spinner>
