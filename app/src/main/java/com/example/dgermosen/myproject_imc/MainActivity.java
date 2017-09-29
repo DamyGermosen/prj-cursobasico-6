@@ -367,6 +367,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Mostrar en la aplicación el rango obtenido de IMC
     public void Mostrar_Tipo_IMC(int Edad, char Sexo, double IMC)
     {
+        MediaPlayer mp;
         TextView lblTipoPeso = (TextView) findViewById(R.id.lblTipoPeso);
         lblTipoPeso.setVisibility(View.VISIBLE);
         ImageView imgTipoPeso = (ImageView) findViewById(R.id.imgTipoPeso);
@@ -386,9 +387,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lblTipoPeso.setText("Clasificación: OBESIDAD EXTREMA.");
             lblTipoPeso.setBackgroundColor(Color.parseColor("#D94551"));
             imgTipoPeso.setImageResource(R.mipmap.extrema);
-            /*ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-            toneG.startTone(ToneGenerator.TONE_CDMA_EMERGENCY_RINGBACK, 200);*/
-            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.obesidadextrema);
+            mp = MediaPlayer.create(MainActivity.this, R.raw.obesidadextrema);
             mp.start();
         }
         else if (TipoPeso == 'O') {
@@ -396,9 +395,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lblTipoPeso.setText("Clasificación: OBESO.");
             lblTipoPeso.setBackgroundColor(Color.parseColor("#FE7E37"));
             imgTipoPeso.setImageResource(R.mipmap.obeso);
-            /*ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-            toneG.startTone(ToneGenerator.TONE_CDMA_ABBR_ALERT, 200);*/
-            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.obeso);
+            mp = MediaPlayer.create(MainActivity.this, R.raw.obeso);
             mp.start();
         }
         else if (TipoPeso == 'S') {
@@ -406,9 +403,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lblTipoPeso.setText("Clasificación: SOBREPESO.");
             lblTipoPeso.setBackgroundColor(Color.parseColor("#FFB98D"));
             imgTipoPeso.setImageResource(R.mipmap.sobrepeso);
-            /*ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-            toneG.startTone(ToneGenerator.TONE_PROP_BEEP, 200);*/
-            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.sobrepeso);
+            mp = MediaPlayer.create(MainActivity.this, R.raw.sobrepeso);
             mp.start();
         }
         else if (TipoPeso == 'N') {
@@ -416,9 +411,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lblTipoPeso.setText("Clasificación: PESO NORMAL.");
             lblTipoPeso.setBackgroundColor(Color.parseColor("#6AD0D5"));
             imgTipoPeso.setImageResource(R.mipmap.normal);
-            /*ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
-            toneG.startTone(ToneGenerator.TONE_CDMA_SOFT_ERROR_LITE, 200);*/
-            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.normal);
+            mp = MediaPlayer.create(MainActivity.this, R.raw.normal);
             mp.start();
         }
         else {
@@ -426,9 +419,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lblTipoPeso.setText("Clasificación: PESO INSUFICIENTE.");
             lblTipoPeso.setBackgroundColor(Color.parseColor("#006B99"));
             imgTipoPeso.setImageResource(R.mipmap.insuficiente);
-           /* ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-            toneG.startTone(ToneGenerator.MIN_VOLUME, 200);*/
-            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.insuficiente);
+            mp = MediaPlayer.create(MainActivity.this, R.raw.insuficiente);
             mp.start();
         }
 
