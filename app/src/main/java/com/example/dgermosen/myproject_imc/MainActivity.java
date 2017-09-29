@@ -67,6 +67,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rgrSexo.requestFocus();
 
     }
+    //Método para finalizar la aplicación cuando se presione el botón HOME en el dispositivo móvil
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
     //Método que se ejecuta al presionar el botón BACK en el dispositivo móvil
     @Override
     public void onBackPressed() {
@@ -152,6 +158,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Estatura = Float.parseFloat(txtEstatura.getText().toString());
             EstaturaPie = (int)(Estatura);
             EstaturaPulg = (Estatura - (double)(EstaturaPie))*100 ;
+
+            //Validar que la cantidad de pulgadas no sobrepase 11, porque 1 pie equivale a 12 pulgadas,
+            //por tanto 5.12 no existe, si no que debe introducirse como 6.0 pies.
+            if(EstaturaPulg>11) {
+                Toast.makeText(this, "No puedes especificar pulgadas mayor o igual a 12, ya que 12 pulg representan un pie. Ej: 5.12 es 6.0 pies!", Toast.LENGTH_LONG).show();
+                ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
+                toneG.startTone(ToneGenerator.TONE_CDMA_SOFT_ERROR_LITE, 200);
+                return;
+            }
             Estatura = EstaturaPie*0.3048 + EstaturaPulg*0.0254;
         }
 

@@ -89,7 +89,7 @@ tools:context=".MainActivity"
 
             <EditText
                 android:id="@+id/txtEstatura"
-                android:layout_width="100dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="right"
@@ -98,10 +98,16 @@ tools:context=".MainActivity"
                 android:maxLength="4"/>
             <Spinner
                 android:id="@+id/spnEstatura"
-                android:layout_width="100dp"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:gravity="left">
             </Spinner>
+            <TextView
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:text="Ej: 160 cm, 1.6 mt, 5.03 pie"
+                android:textSize="8sp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
@@ -120,7 +126,7 @@ tools:context=".MainActivity"
 
             <EditText
                 android:id="@+id/txtPeso"
-                android:layout_width="100dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:gravity="right"
@@ -129,7 +135,7 @@ tools:context=".MainActivity"
                 android:maxLength="3"/>
             <Spinner
                 android:id="@+id/spnPeso"
-                android:layout_width="100dp"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:gravity="left">
 
