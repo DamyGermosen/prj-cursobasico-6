@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:padding="30dp"
+android:gravity="center"
+android:orientation="vertical"
+android:background="#DCDCDC"
+tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@mipmap/logo"
+            android:layout_marginBottom="30dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgrSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:focusable="true">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Sexo: "
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#7A91C0"
+                    android:text="Hombre"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#7A91C0"
+                    android:text="Mujer"
+                    android:textSize="20sp"/>
+            </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Edad: "
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spnEdad"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:gravity="left">
+
+            </Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Estatura: "
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/txtEstatura"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:maxLength="4"/>
+            <Spinner
+                android:id="@+id/spnEstatura"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:gravity="left">
+            </Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Peso: "
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/txtPeso"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:maxLength="3"/>
+            <Spinner
+                android:id="@+id/spnPeso"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:gravity="left">
+
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp">
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#7A91C0"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="Calcular"
+                android:textColor="#88D4BF"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#7A91C0"
+                android:gravity="center"
+                android:onClick="Limpiar"
+                android:text="Limpiar"
+                android:textColor="#88D4BF"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/lblResultado"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Resultado:"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/lblTipoPeso"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:textSize="16sp" />
+            <ImageView
+                android:id="@+id/imgTipoPeso"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
