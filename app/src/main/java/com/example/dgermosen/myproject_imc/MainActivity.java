@@ -377,11 +377,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lblResultado.setText("Resultado: " + String.format("%.2f",IMC));
 
         char TipoPeso = ' ';
+        //Si el cálculo IMC es para hombre
         if (Sexo == 'H')
             TipoPeso = Obtener_Tipo_Peso_Hombre(Edad, IMC);
         else
             TipoPeso = Obtener_Tipo_Peso_Mujer(Edad, IMC);
 
+        //IMC Obesidad Extrema
         if (TipoPeso == 'E') {
             lblResultado.setTextColor(Color.parseColor("#D94551"));
             lblTipoPeso.setText("Clasificación: OBESIDAD EXTREMA.");
@@ -390,6 +392,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mp = MediaPlayer.create(MainActivity.this, R.raw.obesidadextrema);
             mp.start();
         }
+        //IMC Obeso
         else if (TipoPeso == 'O') {
             lblResultado.setTextColor(Color.parseColor("#FE7E37"));
             lblTipoPeso.setText("Clasificación: OBESO.");
@@ -398,6 +401,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mp = MediaPlayer.create(MainActivity.this, R.raw.obeso);
             mp.start();
         }
+        //IMC Sobrepeso
         else if (TipoPeso == 'S') {
             lblResultado.setTextColor(Color.parseColor("#FFB98D"));
             lblTipoPeso.setText("Clasificación: SOBREPESO.");
@@ -406,6 +410,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mp = MediaPlayer.create(MainActivity.this, R.raw.sobrepeso);
             mp.start();
         }
+        //IMC peso normal
         else if (TipoPeso == 'N') {
             lblResultado.setTextColor(Color.parseColor("#6AD0D5"));
             lblTipoPeso.setText("Clasificación: PESO NORMAL.");
@@ -414,6 +419,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mp = MediaPlayer.create(MainActivity.this, R.raw.normal);
             mp.start();
         }
+        //IMC peso insuficiente
         else {
             lblResultado.setTextColor(Color.parseColor("#006B99"));
             lblTipoPeso.setText("Clasificación: PESO INSUFICIENTE.");
