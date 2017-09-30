@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Método que se ejecuta al presionar el botón BACK en el dispositivo móvil
     @Override
     public void onBackPressed() {
-        Intent intent = getIntent();
         finish();
     }
     public void onClick(View view) {
