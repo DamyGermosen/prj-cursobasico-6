@@ -9,7 +9,7 @@ Para un valor más óptimo se toman en cuenta factores como edad, sexo, capturad
 La estatura puede ser expresada en centímetros (cm), metros (mt) o pies.
 El peso puede ser expresado en kilogramos (kg) o libras (lb).
 
-Una vez digitados los valores necesarios se calcula el imc luego de presionar el botón correspondiente y se muestra 
+Una vez digitados los valores necesarios se calcula el IMC luego de presionar el botón correspondiente y se muestra 
 el valor obtenido y en cuál clasificación del IMC se encuentra:
 
 - Peso insuficiente 
