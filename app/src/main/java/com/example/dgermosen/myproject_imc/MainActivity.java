@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.btnCalcular).setOnClickListener(this);
 
-        String[] Edades = new String[49];
+        String[] Edades = new String[48];
         int EdadMenor=18;
         //El IMC se calcula generalmente para personas entre 18 y 65 años (siendo las personas de más de 65 años
         //parte de éste último rango de porcentajes de IMC, por ello el arreglo va de 18 a 65+ años
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Edades[i] = Integer.toString(EdadMenor);
             EdadMenor++;
         }
-        Edades[48] = "65+" ;
+        Edades[47] = "65+" ;
 
         Spinner spnEdad = (Spinner) findViewById(R.id.spnEdad);
 
@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         Intent intent = getIntent();
         finish();
-        return;
     }
     public void onClick(View view) {
         InputMethodManager inputManager =
@@ -124,9 +123,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText txtPeso = (EditText) findViewById(R.id.txtPeso);
         EditText txtEstatura = (EditText) findViewById(R.id.txtEstatura);
 
-        double Peso, Estatura, EstaturaPulg, Resultado = 0;
+        double Peso, Estatura, EstaturaPulg, Resultado;
         int Edad, EstaturaPie;
-        char Sexo=' ';
+        char Sexo;
 
         //Si se elije 65+ pues es lo mismo que 65 porque forma parte del mismo rango de IMC
         if (spnEdad.getSelectedItem()=="65+")
@@ -161,10 +160,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //Validar que la cantidad de pulgadas no sobrepase 11, porque 1 pie equivale a 12 pulgadas,
             //por tanto 5.12 no existe, si no que debe introducirse como 6.0 pies.
-            if(EstaturaPulg>11) {
+            if(((int)Math.round(EstaturaPulg))>11) {
                 Toast.makeText(this, "No puedes especificar pulgadas mayor o igual a 12, ya que 12 pulg representan un pie. Ej: 5.12 es 6.0 pies!", Toast.LENGTH_LONG).show();
                 ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
                 toneG.startTone(ToneGenerator.TONE_CDMA_SOFT_ERROR_LITE, 200);
+                Limpiar(null);
                 return;
             }
             Estatura = EstaturaPie*0.3048 + EstaturaPulg*0.0254;
@@ -198,7 +198,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
             {
                 Toast.makeText(this, "Debes seleccionar el sexo!", Toast.LENGTH_SHORT).show();
-                return;
             }
 
     }
@@ -391,7 +390,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lblResultado.setVisibility(View.VISIBLE);
         lblResultado.setText("Resultado: " + String.format("%.2f",IMC));
 
-        char TipoPeso = ' ';
+        char TipoPeso;
         //Si el cálculo IMC es para hombre
         if (Sexo == 'H')
             TipoPeso = Obtener_Tipo_Peso_Hombre(Edad, IMC);
